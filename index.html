@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/imgs/logo.png" type="image/x-icon">
+    <!-- Font Awesome css-->
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <!-- Custom css-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Yummy</title>
+</head>
+
+<body class="background-custom">
+    <section>
+        <div class="container w-75" id="searchContainer">
+
+        </div>
+    </section>
+    <div class="loading-screen min-vh-100 position-fixed z-3  start-0 end-0 bottom-0 background-custom justify-content-center align-items-center" style="display: none;">
+        <i class="fa fa-spinner fa-spin fa-5x "></i>
+    </div>
+    <section class="side-menu position-fixed top-0  background-custom d-flex min-vh-100 z-2">
+        <div class="nav-content position-relative background-custom">
+            <div class=" p-4 d-flex text-white flex-column justify-content-between vh-100">
+                <nav class="text-capitalize ">
+                    <li class="position-relative"><a href="#search" onclick="displaySearchInputs()" >search</a></li>
+                    <li class="position-relative"><a href="#categories" onclick="getMealsByCategories()" >categories</a></li>
+                    <li class="position-relative"><a href="#area" onclick="getMealsByArea()" >area</a></li>
+                    <li class="position-relative"><a href="#ingredients" onclick="getMealsByIngredients()" >ingredients</a></li>
+                    <li class="position-relative"><a href="#contact" onclick="contactForm()" >contact us</a></li>
+
+                </nav>
+                <div>
+                    <ul class="d-flex gap-1">
+                        <li><span class="fa-brands fa-facebook"></span></li>
+                        <li><span class="fa-brands fa-twitter"></span></li>
+                        <li><span class="fa-solid fa-globe"></span></li>
+                    </ul>
+                    <p class="">Copyright © 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+        <ul
+            class="menu-controller position-relative d-flex flex-column justify-content-between py-3 px-1 text-center">
+            <li><a href="#"><img src="./assets/imgs/logo.png" alt="logo"></a></li>
+            <li class="menu-controller-icon"><span class="fa-solid fa-bars fs-2"></span></li>
+            <div>
+                <li><span class="fa-solid fa-globe"></span></li>
+                <li><span class="fa-solid fa-share-nodes"></span></li>
+            </div>
+        </ul>
+    </section>
+    <div class="inner-loading-screen  background-custom z-3 text-white position-fixed top-0 start-0 end-0 bottom-0" style="display: none;">
+        <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <i class="fa fa-spinner fa-spin fa-5x"></i></div>
+    </div>
+    <section>
+    <div class="container p-4">
+
+        
+        <div class="row g-4 ps-5 px-sm-3 px-md-4 px-lg-5" id="dataRow"></div>
+
+        
+
+    </div>
+</section>
+
+
+    <!-- Bootstrap JS -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Jquery JS -->
+    <script src="./assets//js/jquery-3.7.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
