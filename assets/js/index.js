@@ -66,7 +66,7 @@ function displayMealsByName(mealsByNameList) {
             <div class="img-card position-relative" onclick="getMealsById(${mealsByNameList[i].idMeal})">
                 <img src="${mealsByNameList[i].strMealThumb}" alt="${mealsByNameList[i].strMeal}" class="border border-0 rounded-2">
                 <div class="img-overlay position-absolute bg-white bg-opacity-75 border border-0 rounded-2 overflow-hidden">
-                    <h2 class="meal-name d-flex align-items-center h-100">${mealsByNameList[i].strMeal}</h2>
+                    <h2 class="meal-name justify-content-center d-flex align-items-center h-100">${mealsByNameList[i].strMeal}</h2>
                 </div>
             </div>
         </div>`;
@@ -132,29 +132,33 @@ function displayMealsById(mealsByIdList) {
     </div>
 
     <div class="col-md-9">
-        <div class="meal-info text-white">
-            <h2>Instructions</h2>
-            <p>${mealsByIdList.meals[0].strInstructions}</p>
+    <div class="meal-info text-white p-4 background-custom rounded-lg shadow-sm">
+        <h2 class="h4 mb-3">Instructions</h2>
+        <p>${mealsByIdList.meals[0].strInstructions}</p><br>
 
-            <h2>Area : ${mealsByIdList.meals[0].strArea}</h2>
-            <h2>Category : ${mealsByIdList.meals[0].strCategory}</h2>
+        <h2 class="h5 mb-3">Area: ${mealsByIdList.meals[0].strArea}</h2>
+        <h2 class="h5 mb-3">Category: ${mealsByIdList.meals[0].strCategory}</h2><br>
 
-            <div class="recipes">
-                <h2>Recipes :</h2>
-                <ul class="d-flex flex-wrap gap-2">${resultRecipes}</ul>
-            </div>
+        <div class="recipes">
+            <h2 class="h5 mb-2">Recipes:</h2>
+            <ul class="d-flex flex-wrap gap-2">${resultRecipes}</ul>
+        </div><br>
 
-            <div class="tags">
-                <h2>Tags :</h2>
-                <ul class="d-flex flex-wrap gap-2">${resultTags}</ul>
-            </div>
-
-            <ul class="d-flex flex-wrap gap-2">
-                <li class="btn btn-success p-2"><a href="${mealsByIdList.meals[0].strSource}" target="_blank">Source</a></li>
-                <li class="btn btn-danger p-2"><a href="${mealsByIdList.meals[0].strYoutube}" target="_blank">Youtube</a></li>
-            </ul>
+        <div class="tags">
+            <h2 class="h5 mb-2">Tags:</h2>
+            <ul class="d-flex flex-wrap gap-2">${resultTags}</ul>
         </div>
-    </div>`;
+
+        <ul class="d-flex flex-wrap gap-3">
+            <li class="btn btn-success p-2 rounded">
+                <a href="${mealsByIdList.meals[0].strSource}" target="_blank" class="text-white text-decoration-none">Source</a>
+            </li>
+            <li class="btn btn-danger p-2 rounded">
+                <a href="${mealsByIdList.meals[0].strYoutube}" target="_blank" class="text-white text-decoration-none">Youtube</a>
+            </li>
+        </ul>
+    </div>
+</div>`;
 
     dataRow.innerHTML = result;
 }
@@ -163,11 +167,11 @@ function displayMealsById(mealsByIdList) {
 // Display search inputs
 function displaySearchInputs() {
     searchContainer.innerHTML = `
-    <div class="row py-4">
-        <div class="col-md-6">
+    <div class="row py-4 px-3">
+        <div class="col-md-6 py-2">
             <input type="text" onkeyup="getSearchByName(this.value)" class="form-control text-white bg-transparent" placeholder="Search By Name">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 py-2">
             <input type="text" onkeyup="getSearchByFirstLetter(this.value)" class="form-control text-white bg-transparent" placeholder="Search By First Letter" maxlength="1">
         </div>
     </div>`;
@@ -365,7 +369,7 @@ function contactForm() {
                                 </p>
                             </div>
                             <div class="col text-center">
-                                <button id="submitBtn" class="btn btn-outline-danger cursor-pointer" disabled>Submit</button>
+                                <button id="submitBtn" class="btn btn-submit cursor-pointer" disabled>Submit</button>
                             </div>
                         </div>
                     </form>
